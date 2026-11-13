@@ -5,100 +5,139 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shreeram M — AI Full Stack Engineer</title>
 <meta name="description" content="Shreeram M, AI full stack engineer. AI products, open-source Go, web apps.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='34' font-weight='700' text-anchor='middle' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23E95420'/%3E%3Cpath fill='%23fff' d='M2 1h4v1H2zM1 2h1v2H1zM2 4h4v1H2zM6 5h1v2H6zM2 7h4v-1H2z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-:root{--bg:#fff;--fg:#111;--muted:#6b6b6b;--line:#e6e6e6;--tag:#f3f3f3}
-@media (prefers-color-scheme:dark){:root{--bg:#0f0f10;--fg:#ececec;--muted:#9a9a9a;--line:#26262a;--tag:#1c1c1f}}
+:root{--bg:#2c001e;--term:#300a24;--bar:#3d3846;--fg:#eeeeec;--muted:#b9a9b5;--go:#00add8;--orange:#e95420;--line:#4a1a3c}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-main{max-width:760px;margin:0 auto;padding:72px 20px 48px}
-a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--line)}
-a:hover{text-decoration-color:currentColor}
-h1{font-size:2rem;font-weight:600;letter-spacing:-.02em}
-h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:64px 0 20px}
-h3{font-size:1rem;font-weight:600}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 Ubuntu,system-ui,sans-serif}
+main{max-width:800px;margin:0 auto;padding:48px 16px}
+a{color:var(--go);text-underline-offset:3px}
+h1,h2,.prompt,.head span,footer,.links a,.tile strong{font-family:"Ubuntu Mono",monospace}
 p{color:var(--muted)}
-.role{font-size:1.1rem;margin:4px 0 16px}
-.links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-weight:500}
-.item{padding:20px 0;border-top:1px solid var(--line)}
-.item:last-child{border-bottom:1px solid var(--line)}
+.term{background:var(--term);border-radius:10px;overflow:hidden;margin-bottom:28px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.bar{background:var(--bar);display:flex;align-items:center;gap:8px;padding:8px 12px;font:500 .85rem Ubuntu,sans-serif;color:#cfcfcf}
+.bar span{flex:1;text-align:center}
+.bar i{width:14px;height:14px;border-radius:50%;background:#5e5c64}
+.bar i:last-child{background:var(--orange)}
+.body{padding:20px 22px}
+.prompt{color:var(--go)}
+.prompt b{color:#8ae234;font-weight:700}
+.prompt::after{content:"";display:inline-block;width:.55em;height:1em;background:var(--fg);vertical-align:-2px;margin-left:4px}
+h1{font-size:2.6rem;line-height:1.1;margin:12px 0 4px}
+h2{font-size:1.1rem;font-weight:400;color:var(--go);margin-bottom:12px}
+h2::before{content:"$ ";color:var(--orange)}
+h3{font-size:1rem;font-weight:500}
+h3 a{color:var(--fg)}
+.role{font-size:1.1rem;color:var(--orange);margin-bottom:12px}
+.links,.social{display:flex;flex-wrap:wrap;gap:10px}
+.links{margin-top:20px}
+.links a{text-decoration:none;padding:6px 14px;border:1px solid var(--go);border-radius:6px}
+.links a:hover,.social a:hover{background:var(--go);color:var(--bg)}
+.item{padding:14px 0 14px 16px;border-left:2px solid var(--line)}
+.item:hover{border-left-color:var(--go)}
 .head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
-.head span{color:var(--muted);font-size:.875rem}
-.item p{margin-top:6px}
-footer{margin-top:64px;color:var(--muted);font-size:.875rem}
+.head span{color:var(--orange);font-size:.9rem}
+.item p{margin-top:4px}
+.gh{text-decoration:none;white-space:nowrap}
+.gh:hover{text-decoration:underline}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{padding:14px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--fg);display:block}
+.tile i{font-size:1.3rem;color:var(--go)}
+.tile h3{margin-top:8px}
+.tile strong{display:block;overflow-wrap:anywhere;font-size:1.3rem;color:var(--orange)}
+.stack{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none}
+.stack li{display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:6px;font-family:"Ubuntu Mono",monospace;color:var(--muted)}
+.stack i{font-size:1.3rem}
+.stack li:hover{color:var(--c);border-color:var(--c)}
+footer{color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.social a{width:40px;height:40px;display:grid;place-items:center;font-size:1.1rem;text-decoration:none;color:var(--go);border:1px solid var(--go);border-radius:8px}
 </style>
 </head>
 <body>
+
 <main>
 
-<header>
+<header class="term"><div class="bar"><span>shreeram@dev: ~</span><i></i><i></i><i></i></div><div class="body">
+  <p class="prompt"><b>shreeram@dev</b>:~$ whoami</p>
   <h1>Shreeram M</h1>
   <p class="role">AI Full Stack Engineer · Kozhikode, Kerala</p>
   <p>I build AI products and the full stack around them in Python, Go and TypeScript. Currently a developer at SpotsBooking (Netherlands, remote) and contributing to open-source Go.</p>
   <nav class="links">
     <a href="mailto:shreerammuduvil@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shreeram-m-516956217/">LinkedIn</a>
     <a href="https://github.com/searaaman">GitHub</a>
-    <a href="tel:+919446895063">+91 94468 95063</a>
+    <a href="https://wa.me/919446895063">WhatsApp</a>
   </nav>
-</header>
+</div></header>
 
-<section>
-  <h2>AI work</h2>
+<section class="term"><div class="bar"><span>shreeram@dev: ~</span><i></i><i></i><i></i></div><div class="body">
+  <h2>cat stack.txt</h2>
+  <ul class="stack">
+    <li style="--c:#00add8"><i class="devicon-go-plain"></i>Go</li>
+    <li style="--c:#ffd43b"><i class="devicon-python-plain"></i>Python</li>
+    <li style="--c:#5a9bf0"><i class="devicon-typescript-plain"></i>TypeScript</li>
+    <li style="--c:#61dafb"><i class="devicon-react-original"></i>React</li>
+    <li style="--c:#44b78b"><i class="devicon-django-plain"></i>Django</li>
+    <li style="--c:#05998b"><i class="devicon-fastapi-plain"></i>FastAPI</li>
+    <li style="--c:#6d9fd6"><i class="devicon-postgresql-plain"></i>PostgreSQL</li>
+    <li style="--c:#2496ed"><i class="devicon-docker-plain"></i>Docker</li>
+  </ul>
+</div></section>
+
+<section class="term"><div class="bar"><span>shreeram@dev: ~/ai-work</span><i></i><i></i><i></i></div><div class="body">
+  <h2>ls ai-work</h2>
 
   <div class="item">
-    <div class="head"><h3><a href="https://github.com/searaaman/prepcut">PrepCut</a></h3><span>Python · Gemini</span></div>
+    <div class="head"><h3><a href="https://github.com/searaaman/prepcut">PrepCut</a></h3><span>Python · Gemini · <a class="gh" href="https://github.com/searaaman/prepcut" aria-label="PrepCut on GitHub"><i class="fa-brands fa-github"></i> code</a></span></div>
     <p>Turns an exam topic into a 9:16 explainer video: script, images, narration and render. A QA agent checks every frame and rejects broken output before it ships.</p>
   </div>
 
   <div class="item">
-    <div class="head"><h3>Price-list import — SpotsBooking</h3><span>Gemini vision · Next.js · Express</span></div>
-    <p>Partners photograph a printed price list and the app reads it into structured services ready to review and save. Shipped to production.</p>
-  </div>
-
-  <div class="item">
-    <div class="head"><h3><a href="https://github.com/searaaman/ThreadMind">ThreadMind</a></h3><span>FastAPI · Gemini</span></div>
+    <div class="head"><h3><a href="https://github.com/searaaman/ThreadMind">ThreadMind</a></h3><span>FastAPI · Gemini · <a class="gh" href="https://github.com/searaaman/ThreadMind" aria-label="ThreadMind on GitHub"><i class="fa-brands fa-github"></i> code</a></span></div>
     <p>Chatbot with persistent memory that keeps context across conversations, built toward vector search and RAG.</p>
   </div>
-</section>
+</div></section>
 
-<section>
-  <h2>Open source</h2>
+<section class="term"><div class="bar"><span>shreeram@dev: ~/open-source</span><i></i><i></i><i></i></div><div class="body">
+  <h2>ls open-source</h2>
 
   <div class="item">
     <div class="head"><h3><a href="https://github.com/datazip-inc/olake/pull/1382">OLake by Datazip</a></h3><span>Go · PR #1382</span></div>
     <p>Fixed S3 incremental sync skipping files modified in the same second as the cursor. The fix tracks keys already read at the cursor second and persists them with the sync state.</p>
   </div>
-</section>
+</div></section>
 
-<section>
-  <h2>Projects</h2>
+<section class="term"><div class="bar"><span>shreeram@dev: ~/projects</span><i></i><i></i><i></i></div><div class="body">
+  <h2>ls projects</h2>
 
   <div class="item">
-    <div class="head"><h3><a href="https://github.com/searaaman/attendly">Attendly</a></h3><span>Go · React</span></div>
+    <div class="head"><h3><a href="https://github.com/searaaman/attendly">Attendly</a></h3><span>Go · React · <a class="gh" href="https://github.com/searaaman/attendly" aria-label="Attendly on GitHub"><i class="fa-brands fa-github"></i> code</a></span></div>
     <p>Slot attendance and billing for shared bookings, with a tested cost-split and ledger.</p>
   </div>
 
   <div class="item">
-    <div class="head"><h3><a href="https://renewly-hwbl.onrender.com">Renewly</a></h3><span>Django · Live</span></div>
+    <div class="head"><h3><a href="https://renewly-hwbl.onrender.com">Renewly</a></h3><span>Django · Live · <a class="gh" href="https://github.com/searaaman/renewly" aria-label="Renewly on GitHub"><i class="fa-brands fa-github"></i> code</a></span></div>
     <p>Subscription and payments admin that derives each subscription's status from its dates and payments.</p>
   </div>
 
   <div class="item">
-    <div class="head"><h3><a href="https://github.com/searaaman/instead">Instead</a></h3><span>React Native · Expo</span></div>
+    <div class="head"><h3><a href="https://github.com/searaaman/instead">Instead</a></h3><span>React Native · Expo · <a class="gh" href="https://github.com/searaaman/instead" aria-label="Instead on GitHub"><i class="fa-brands fa-github"></i> code</a></span></div>
     <p>Android app that locks doomscroll apps until you complete a real task.</p>
   </div>
 
   <div class="item">
-    <div class="head"><h3><a href="https://github.com/searaaman/instabyte">MeshaDine</a></h3><span>Go · Team project</span></div>
+    <div class="head"><h3><a href="https://github.com/searaaman/instabyte">MeshaDine</a></h3><span>Go · Team project · <a class="gh" href="https://github.com/searaaman/instabyte" aria-label="MeshaDine on GitHub"><i class="fa-brands fa-github"></i> code</a></span></div>
     <p>QR-based restaurant ordering. I built the staff APIs, platform admin and refresh-token sign-in.</p>
   </div>
-</section>
+</div></section>
 
-<section>
-  <h2>Experience</h2>
+<section class="term"><div class="bar"><span>shreeram@dev: ~/experience</span><i></i><i></i><i></i></div><div class="body">
+  <h2>ls experience</h2>
 
   <div class="item">
     <div class="head"><h3>Full Stack Developer — SpotsBooking</h3><span>Oct 2026 – now</span></div>
@@ -118,9 +157,34 @@ footer{margin-top:64px;color:var(--muted);font-size:.875rem}
   <div class="item">
     <div class="head"><h3>B.Tech, Computer Science — AWH Engineering College</h3><span>Kozhikode</span></div>
   </div>
-</section>
+</div></section>
 
-<footer>© 2026 Shreeram M</footer>
+<section class="term"><div class="bar"><span>shreeram@dev: ~/off-the-clock</span><i></i><i></i><i></i></div><div class="body">
+  <h2>ls off-the-clock</h2>
+
+  <div class="tiles">
+    <a class="tile" href="https://www.chess.com/member/searaaman"><i class="fa-solid fa-chess-knight"></i><h3>Chess</h3><strong id="chess">—</strong></a>
+    <div class="tile"><i class="fa-solid fa-calculator"></i><h3>Matiks</h3><strong>1456</strong></div>
+    <div class="tile"><i class="fa-solid fa-table-tennis-paddle-ball"></i><h3>Pickleball</h3></div>
+    <div class="tile"><i class="fa-solid fa-compact-disc"></i><h3>Frisbee</h3></div>
+  </div>
+</div></section>
+
+<footer>
+  <span>© 2026 Shreeram M</span>
+  <nav class="social">
+    <a href="mailto:shreerammuduvil@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/shreeram-m-516956217/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://github.com/searaaman" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://wa.me/919446895063" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </nav>
+</footer>
 </main>
+<script>
+fetch("https://api.chess.com/pub/player/searaaman/stats").then(r=>r.json()).then(d=>{
+  const rating=d.chess_rapid?.last?.rating;
+  if(rating) document.getElementById("chess").textContent=rating+" rapid";
+}).catch(()=>{});
+</script>
 </body>
 </html>
